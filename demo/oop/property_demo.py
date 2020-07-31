@@ -1,3 +1,11 @@
+class InvalidTimeError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return self.message
+
+
 class Time:
     def __init__(self, h, m, s):
         self.h = h
@@ -17,12 +25,16 @@ class Time:
     @hour.setter
     def hour(self, value):
         if value < 0 or value > 23:
-            raise ValueError("Invalid Hour")
+            raise InvalidTimeError(f"Invalid Hour : {value}")
 
         self.h = value
 
 
 t = Time(10, 20, 30)
-t.hour = 15
+try:
+    t.hour = 35
+except InvalidTimeError as ex:
+    print(ex)
+
 print(t.hour)
 print(t.totalseconds)
