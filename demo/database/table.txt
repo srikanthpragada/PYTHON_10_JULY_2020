@@ -8,3 +8,11 @@ CREATE TABLE employees (
 insert into employees(name,job,salary) values('Larry Ellison','ceo',1000000)
 insert into employees(name,job,salary) values('Joe Stanger','spro',100000)
 insert into employees(name,job,salary) values('Kevin Loney','dba',70000)
+
+
+CREATE TABLE countries (
+    code        char(3)      PRIMARY KEY,
+    name        VARCHAR (30) NOT NULL,
+    population  integer(11)
+);
+

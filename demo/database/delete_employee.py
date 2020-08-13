@@ -1,10 +1,7 @@
-import logging
 import sqlite3
 
-logging.basicConfig(filename = r"c:\classroom\sqlite3.log",level=logging.INFO)
 try:
-    con = sqlite3.connect(r"c:\classroom\june16\hr.db")
-    logging.info("Connect to database")
+    con = sqlite3.connect(r"c:\classroom\july10\hr.db")
     cur = con.cursor()
     id = int(input("Enter employee id :"))
     try:
@@ -15,11 +12,9 @@ try:
       else:
         print("Sorry! Employee id not found!")
     except Exception as ex:
-        logging.error(f"Error during update : {ex}")
         print("Error while deleting employee :", ex)
 
 except Exception as ex:
-    logging.error(f"Connection Error : {ex}")
     print("Error : ", ex)
 
 con.close()
