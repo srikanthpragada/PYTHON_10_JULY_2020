@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updare Salary</title>
+</head>
+<body>
+
+<h1>Update Salary</h1>
+<form method="post">
+    {% csrf_token %}
+    Employee Id <br/>
+    <input type="number" name="id" value="{{id}}"/>
+    <p></p>
+    New Salary <br/>
+    <input type="number" name="salary" value="{{salary}}"/>
+    <p></p>
+    <input type="submit" value="Update" />
+</form>
+<h3>{{message}}</h3>
+</body>
+</html>

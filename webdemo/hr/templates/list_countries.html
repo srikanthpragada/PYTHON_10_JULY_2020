@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <style>
+        body {
+           font-family : calibri;
+           font-size : 14pt;
+        }
+    </style>
+</head>
+<body>
+<h1>Countries</h1>
+
+<table width="100%">
+     <tr style="background-color:red;color:white;font-weight:bold">
+         <th>Name</th>
+         <th>Capital</th>
+         <th>Region</th>
+         <th>Population</th>
+         <th>Area</th>
+         <th>Flag</th>
+     </tr>
+     {% for c in countries %}
+          <tr>
+              <td>{{c.name}}</td>
+              <td>{{c.capital}}</td>
+              <td>{{c.region}}</td>
+              <td style="text-align:right">{{c.population}}</td>
+              <td style="text-align:right">{{c.area}}</td>
+              <td>
+                 <a href="{{c.flag}}" target="_blank">
+                     <img src="{{c.flag}}" style="width:100px;height=100px;"/>
+                 </a>
+              </td>
+          </tr>
+     {% endfor %}
+
+</table>
+
+</body>
+</html>
