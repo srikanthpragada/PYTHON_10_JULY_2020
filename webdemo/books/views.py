@@ -38,7 +38,7 @@ def book_add(request):
     else:  # POST
         form = BookForm(request.POST)  # bind form with post data
         if form.is_valid():
-            form.save()  # Add book to table
+            form.save()  # Add book (row) to table
             return redirect("/books/list")
         else:
             return render(request, 'add.html', {'form': form})
