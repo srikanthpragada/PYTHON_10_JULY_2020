@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function getQuote() {
+             // make ajax request
+             $.get("http://localhost:8000/hr/quote/",null,showQuote); // URL,Data,Callback
+        }
+
+        function showQuote(response) {
+             $("#quote").text(response);
+        }
+    </script>
+</head>
+<body>
+<h1>Ajax Demo</h1>
+<h2 style="color:blue" id="quote"></h2>
+<button onclick="getQuote()">Quote of the day!</button>
+
+</body>
+</html>
