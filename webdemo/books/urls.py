@@ -17,7 +17,7 @@ urlpatterns = [
     path("listbooks/", class_views.ListBooksView.as_view()),
 
     # REST API views
-    path('rest/books/', rest_views.process_books),
-    path('rest/books/<int:id>', rest_views.process_one_book),
+    path('rest/books/', rest_views.process_books),  # GET, POST
+    path('rest/books/<int:id>', rest_views.process_one_book),  # GET, DELETE, PUT
 
 ]

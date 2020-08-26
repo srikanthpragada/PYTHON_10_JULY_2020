@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'hr',
     'books',
     'learning',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

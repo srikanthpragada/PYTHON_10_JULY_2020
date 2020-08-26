@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from books.models import Book
 
 
-# To perform JSON Serialization - Book to JSON
+# To perform JSON Serialization - Book to JSON, JSON to Book
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
@@ -17,7 +17,7 @@ def process_books(request):
     if request.method == "GET":
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data)  # Array of JSON objects
     else:  # Post
         book = BookSerializer(data=request.data)
         if book.is_valid():
